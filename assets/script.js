@@ -63,9 +63,8 @@ function selectAnswer(e) {
 
 function setStatusClass(element, correct) {
     clearStatusClass(element)
-    if (correct) {
+    if (correct == "true") {
         element.classList.add('correct')
-        var value = localStorage.getItem("correct")
     } else {
         element.classList.add('wrong')
     }
@@ -74,7 +73,7 @@ function setStatusClass(element, correct) {
 function clearStatusClass(element) {
     console.log(element)
     element.classList.remove('correct') //why?
-    element.classslist.remove('wrong')
+    element.classlist.remove('wrong')
 }
 
 const question = [
