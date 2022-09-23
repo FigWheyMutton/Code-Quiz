@@ -20,6 +20,26 @@ function startGame() {
   setNextQuestion()
 }
 
+
+function makeAlert() {
+  alert("Time's Up!")
+};
+
+function Alertpt2() {
+  var timeLeft = 75;
+  var downloadTimer = setInterval(function () {
+    console.log(timeLeft)
+    /* if(timeLeft <= 0) {
+      clearInterval(downloadTimer);
+      document.getElementById('Countdown').innerHTML = "No Time";
+    } else {
+      document.getElementById('Countdown').innerText = timeLeft;
+    } */
+    document.getElementById('countdown').innerText = timeLeft
+    timeLeft = timeLeft - 1
+  }, 1000);
+}
+
 function setNextQuestion() {
   resetState()
   showQuestion(shuffledQuestions[currentQuestionIndex])
@@ -57,8 +77,7 @@ function selectAnswer(e) {
   if (shuffledQuestions.length > currentQuestionIndex + 1) {
     nextButton.classList.remove('hide')
   } else {
-    startButton.innerText = 'Restart'
-    startButton.classList.remove('hide')
+    
   }
 }
 
@@ -78,35 +97,35 @@ function clearStatusClass(element) {
 
 const questions = [
   {
-    question: 'What is 2 + 2?',
+    question: 'Can a let variable be redeclard?',
     answers: [
       { text: '4', correct: true },
       { text: '22', correct: false }
     ]
   },
   {
-    question: 'Who is the best YouTuber?',
+    question: 'Which file does mac users have to add that windows users do not have to use? ',
     answers: [
-      { text: 'Web Dev Simplified', correct: true },
-      { text: 'Traversy Media', correct: true },
-      { text: 'Dev Ed', correct: true },
-      { text: 'Fun Fun Function', correct: true }
+      { text: 'gitignore', correct: true },
+      { text: 'javascript.js', correct: false },
+      { text: 'style.css', correct: false },
+      { text: 'boolean', correct: false }
     ]
   },
   {
-    question: 'Is web development fun?',
+    question: 'What do you have to do to be able to see changes on browser from index?',
     answers: [
-      { text: 'Kinda', correct: false },
-      { text: 'YES!!!', correct: true },
-      { text: 'Um no', correct: false },
-      { text: 'IDK', correct: false }
+      { text: 'open another tab', correct: false },
+      { text: 'Save!!', correct: true },
+      { text: 'open git bash', correct: false },
+      { text: 'use visual studios to close files', correct: false }
     ]
   },
   {
-    question: 'What is 4 * 2?',
+    question: 'style.css has to be the last stylesheet to be loaded when there are other stylesheets to be accessed?',
     answers: [
-      { text: '6', correct: false },
-      { text: '8', correct: true }
+      { text: 'No', correct: false },
+      { text: 'Yes', correct: true }
     ]
   }
 ]
