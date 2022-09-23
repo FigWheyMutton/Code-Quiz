@@ -3,7 +3,7 @@ const nextButton = document.getElementById('next-btn')
 const questionContainerElement = document.getElementById('question-container')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
-
+const remover = document.getElementById('countdown')
 let shuffledQuestions, currentQuestionIndex
 
 startButton.addEventListener('click', startGame)
@@ -18,27 +18,21 @@ function startGame() {
   currentQuestionIndex = 0
   questionContainerElement.classList.remove('hide')
   setNextQuestion()
+  Alertpt2()
 }
-
-
-function makeAlert() {
-  alert("Time's Up!")
-};
 
 function Alertpt2() {
   var timeLeft = 75;
   var downloadTimer = setInterval(function () {
     console.log(timeLeft)
-    /* if(timeLeft <= 0) {
-      clearInterval(downloadTimer);
-      document.getElementById('Countdown').innerHTML = "No Time";
-    } else {
-      document.getElementById('Countdown').innerText = timeLeft;
-    } */
-    document.getElementById('countdown').innerText = timeLeft
+    remover.classList.remove(hide)
+    document.getElementById('countdown').innerText = timeLeft + ' second left'
     timeLeft = timeLeft - 1
   }, 1000);
-}
+  if (timeleft = 0){
+    alert("Time's Up!")
+  }
+  }
 
 function setNextQuestion() {
   resetState()
